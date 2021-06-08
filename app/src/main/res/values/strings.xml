@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">deanpinlac_COMP304Sec002_Lab2</string>
+
+    <string-array name="canadian_pizza_ing">
+        <item>Pepperoni</item>
+        <item>Bacon Crumble</item>
+        <item>Sliced Mushrooms</item>
+        <item>Pizza Mozzarella</item>
+    </string-array>
+
+    <string-array name="chicken_caesar_pizza_ing">
+        <item>Alfredo Sauce</item>
+        <item>Seasoned Grilled Chicken Breast</item>
+        <item>Bacon Crumble</item>
+        <item>Roasted Garlic</item>
+        <item>Parmesan</item>
+        <item>Pizza Mozzarella</item>
+    </string-array>
+
+    <string-array name="hawaiian_pizza_ing">
+        <item>Ham</item>
+        <item>Pineapple</item>
+        <item>Tomato Sauce</item>
+        <item>Extra Pizza Mozzarella</item>
+    </string-array>
+
+    <string-array name="smokey_maple_bacon_pizza_ing">
+        <item>Alfredo Sauce</item>
+        <item>Maple Bacon Strips</item>
+        <item>Bacon Crumble</item>
+        <item>Sliced Mushrooms</item>
+        <item>Smoke Aged Cheddar</item>
+        <item>Pizza Mozzarella</item>
+    </string-array>
+
+    <string-array name="veggie_lover_pizza_ing">
+        <item>Sliced Mushrooms</item>
+        <item>Green Pepper</item>
+        <item>Red Onion</item>
+        <item>Tomato</item>
+        <item>Pizza Mozzarella</item>
+    </string-array>
+</resources>
