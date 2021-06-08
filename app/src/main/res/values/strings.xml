@@ -5,6 +5,8 @@
     <string name="pizza_name_hawaiian">Hawaiian Pizza</string>
     <string name="pizza_name_chicken">Chicken Caesar</string>
     <string name="pizza_name_canadian">Canadian Pizza</string>
+    <string name="text_use_menu">Use the Options Menu to View the Pizza Menu</string>
+    <string name="text_default_ing">Ingredient1\nIngredient2\nIngredient3</string>
 
     <string-array name="canadian_pizza_ing">
         <item>Pepperoni</item>
