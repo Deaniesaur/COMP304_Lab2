@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/optionCanadian"
+        android:title="@string/pizza_name_canadian">
+    </item>
+    <item
+        android:id="@+id/optionChicken"
+        android:title="@string/pizza_name_chicken">
+    </item>
+    <item
+        android:id="@+id/optionHawaiian"
+        android:title="@string/pizza_name_hawaiian">
+    </item>
+    <item
+        android:id="@+id/optionSmokey"
+        android:title="@string/pizza_name_smokey">
+    </item>
+    <item
+        android:id="@+id/optionVeggie"
+        android:title="@string/pizza_name_veggie">
+    </item>
+</menu>

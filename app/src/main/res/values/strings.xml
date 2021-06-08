@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">deanpinlac_COMP304Sec002_Lab2</string>
+    <string name="pizza_name_smokey">Smokey Maple Bacon</string>
+    <string name="pizza_name_veggie">Veggie Lover\'s</string>
+    <string name="pizza_name_hawaiian">Hawaiian Pizza</string>
+    <string name="pizza_name_chicken">Chicken Caesar</string>
+    <string name="pizza_name_canadian">Canadian Pizza</string>
 
     <string-array name="canadian_pizza_ing">
         <item>Pepperoni</item>
