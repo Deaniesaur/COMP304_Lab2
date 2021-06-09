@@ -8,10 +8,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.TextView;
 
+import com.centennial.deanpinlac_comp304sec002_lab2.enums.PaymentMethod;
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Address;
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Customer;
+import com.centennial.deanpinlac_comp304sec002_lab2.models.Payment;
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Pizza;
 import com.centennial.deanpinlac_comp304sec002_lab2.utils.Common;
 import com.centennial.deanpinlac_comp304sec002_lab2.utils.CustomAdapterSummary;
@@ -26,6 +29,7 @@ public class SummaryActivity extends AppCompatActivity {
 
     SharedPreferences sharedPref;
     List<Pizza> pizzaList;
+    Payment payment;
     Customer customer;
 
     @Override
@@ -44,6 +48,13 @@ public class SummaryActivity extends AppCompatActivity {
             pizzaList = new ArrayList<>();
         }
 
+        //Retrieve Payment Info
+        String jsonPaymentInfo = sharedPref.getString("pizza_payment", null);
+        if(jsonPaymentInfo != null){
+            payment = Common.convertJsonToObject(jsonPaymentInfo, Payment.class);
+            updatePaymentInfo();
+        }
+
         //Retrieve Customer Info
         String jsonCustomerInfo = sharedPref.getString("pizza_customer", null);
         if(jsonCustomerInfo != null){
@@ -55,6 +66,20 @@ public class SummaryActivity extends AppCompatActivity {
         CustomAdapterSummary adapterSummary = new CustomAdapterSummary(pizzaList);
         recyclerOrderSummary.setAdapter(adapterSummary);
         recyclerOrderSummary.setLayoutManager(new LinearLayoutManager(this));
+    }
+
+    private void updatePaymentInfo() {
+        TextView summaryPaymentType = findViewById(R.id.summaryPaymentType);
+        TextView summaryPaymentEnding = findViewById(R.id.summaryPaymentEnding);
+        TextView summaryPaymentTotal = findViewById(R.id.summaryPaymentTotal);
+
+        summaryPaymentType.setText(payment.getPaymentMethod().toString());
+        if(payment.getPaymentMethod() == PaymentMethod.Cash){
+            summaryPaymentEnding.setVisibility(View.GONE);
+        }else{
+            summaryPaymentEnding.setText(payment.getCard().getNumber().substring(12,15));
+        }
+        summaryPaymentTotal.setText(payment.getTotal());
     }
 
     private void updateCustomerSummary(){
