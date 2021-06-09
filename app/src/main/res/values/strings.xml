@@ -5,7 +5,7 @@
     <string name="pizza_name_hawaiian">Hawaiian Pizza</string>
     <string name="pizza_name_chicken">Chicken Caesar</string>
     <string name="pizza_name_canadian">Canadian Pizza</string>
-    <string name="text_use_menu">Use the Options Menu to View the Pizza Menu</string>
+    <string name="text_use_menu">Use the Options Menu\n to View the Pizza Menu</string>
     <string name="text_default_ing">Ingredient1\nIngredient2\nIngredient3</string>
     <string name="label_button_order">Order</string>
     <string name="logo_description">Pizza Logo</string>
@@ -21,6 +21,56 @@
     <string name="label_summary_payment_info">Payment Information</string>
     <string name="label_summary">Summary</string>
     <string name="label_order_complete">Your Order is Complete!</string>
+    <string name="label_row_name">Item:</string>
+    <string name="label_row_size">Size:</string>
+    <string name="row_label_crust">Crust:</string>
+    <string name="label_row_toppings">Toppings:</string>
+    <string name="default_row_name">Pizza Name</string>
+    <string name="default_row_size">Pizza Size</string>
+    <string name="default_row_crust">Pizza Crust</string>
+    <string name="default_row_toppings">Pizza Toppings</string>
+    <string name="default_row_price">Pizza Price</string>
+    <string name="default_payment_subtotal">Payment Subtotal</string>
+    <string name="label_user_name">Name:</string>
+    <string name="label_user_street">Street:</string>
+    <string name="label_user_address">Address: </string>
+    <string name="label_user_phone">Phone:</string>
+    <string name="label_summary_type">Type:</string>
+    <string name="label_crust_thin">Thin</string>
+    <string name="label_crust_thick">Thick</string>
+    <string name="button_add_pizza">Add Pizza to Cart</string>
+    <string name="default_detail_price">$ Price</string>
+    <string name="label_detail_crust">Crust:</string>
+    <string name="label_detail_size">Size:</string>
+    <string name="label_detail_ingredients">Ingredients:</string>
+    <string name="desc_pizza_preview">Sample Image of Pizza</string>
+    <string name="label_summary_card">Card:</string>
+    <string name="label_summary_subtotal">Subtotal: $</string>
+    <string name="label_summary_total">Total: $</string>
+    <string name="button_payment">Proceed to Payment</string>
+    <string name="label_checkout">Your Cart</string>
+    <string name="label_checkout_total">Total: $</string>
+    <string name="default_checkout_price">Price</string>
+    <string name="default_checkout_subtotal">Price</string>
+    <string name="label_checkout_subtotal">Sub-Total: $</string>
+    <string name="label_info_header">Your Info</string>
+    <string name="default_customer_name">FirstName LastName</string>
+    <string name="default_user_street">Street</string>
+    <string name="default_user_city">City</string>
+    <string name="default_user_state">State</string>
+    <string name="default_user_postal">Postal Code</string>
+    <string name="label_user_city">City:</string>
+    <string name="label_user_state">State:</string>
+    <string name="label_user_postal">Postal Code:</string>
+    <string name="label_user_phone">Phone:</string>
+    <string name="label_user_header2">Additional Info - Favorites</string>
+    <string name="hint_fav_sauce">White Garlic, BBQ, etc...</string>
+    <string name="hint_fav_drink">Coke, Pepsi, Orange, etc...</string>
+    <string name="hint_fav_meat">Beef, Pork, or Chicken</string>
+    <string name="label_sauce">Sauce:</string>
+    <string name="label_drink">Drink:</string>
+    <string name="label_meat">Meat:</string>
+    <string name="button_complete_order">Proceed to Complete Order</string>
 
     <string-array name="pizza_sizes">
         <item>Small</item>
@@ -37,7 +87,7 @@
 
     <string-array name="chicken_caesar_pizza_ing">
         <item>Alfredo Sauce</item>
-        <item>Seasoned Grilled Chicken Breast</item>
+        <item>Seasoned Grilled\nChicken Breast</item>
         <item>Bacon Crumble</item>
         <item>Roasted Garlic</item>
         <item>Parmesan</item>

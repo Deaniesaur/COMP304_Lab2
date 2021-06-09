@@ -80,14 +80,17 @@ public class SummaryActivity extends AppCompatActivity {
     private void updatePaymentInfo() {
         TextView summaryPaymentType = findViewById(R.id.summaryPaymentType);
         TextView summaryPaymentEnding = findViewById(R.id.summaryPaymentEnding);
+        TextView summaryPaymentSubTotal = findViewById(R.id.summaryPaymentSubtotal);
         TextView summaryPaymentTotal = findViewById(R.id.summaryPaymentTotal);
 
         summaryPaymentType.setText(payment.getPaymentMethod().toString());
         if(payment.getPaymentMethod() == PaymentMethod.Cash){
             summaryPaymentEnding.setVisibility(View.GONE);
         }else{
-            summaryPaymentEnding.setText(payment.getCard().getNumber().substring(12,15));
+            String cardDesc = "Ends with " + payment.getCard().getNumber().substring(12,16);
+            summaryPaymentEnding.setText(cardDesc);
         }
+        summaryPaymentSubTotal.setText(payment.getSubTotal());
         summaryPaymentTotal.setText(payment.getTotal());
     }
 

@@ -27,14 +27,14 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:adjustViewBounds="true"
-                android:contentDescription="Sample Image of Pizza"
+                android:contentDescription="@string/desc_pizza_preview"
                 app:srcCompat="@drawable/canadian_pizza" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Ingredients:" />
+                android:text="@string/label_detail_ingredients" />
 
             <TextView
                 android:id="@+id/text_pizza_ing"
@@ -51,10 +51,10 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Size: "
-        app:layout_constraintBottom_toTopOf="@+id/radioGroupSize"
-        app:layout_constraintStart_toStartOf="@+id/labelCrustSize"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+        android:text="@string/label_detail_size"
+        app:layout_constraintTop_toTopOf="@+id/spinnerSize"
+        app:layout_constraintBottom_toBottomOf="@+id/spinnerSize"
+        app:layout_constraintStart_toStartOf="@+id/labelCrustSize" />
 
     <Spinner
         android:id="@+id/spinnerSize"
@@ -69,11 +69,11 @@
         android:id="@+id/labelCrustSize"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Crust: "
-        app:layout_constraintBottom_toTopOf="@+id/checkAddPizza"
+        android:text="@string/label_detail_crust"
+        app:layout_constraintTop_toTopOf="@+id/radioGroupSize"
+        app:layout_constraintBottom_toBottomOf="@+id/radioGroupSize"
         app:layout_constraintEnd_toStartOf="@+id/radioGroupSize"
-        app:layout_constraintStart_toStartOf="@+id/cardView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/cardView" />
 
     <RadioGroup
         android:id="@+id/radioGroupSize"
@@ -83,20 +83,20 @@
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/spinnerSize"
-        app:layout_constraintBottom_toTopOf="@+id/checkAddPizza">
+        app:layout_constraintBottom_toTopOf="@+id/textPrice">
 
         <RadioButton
             android:id="@+id/radioThin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thin"
+            android:text="@string/label_crust_thin"
             android:checked="true"/>
 
         <RadioButton
             android:id="@+id/radioThick"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Thick" />
+            android:text="@string/label_crust_thick" />
 
     </RadioGroup>
 
@@ -117,7 +117,7 @@
         android:id="@+id/checkAddPizza"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Add Pizza to Cart"
+        android:text="@string/button_add_pizza"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView" />
@@ -126,7 +126,7 @@
         android:id="@+id/textPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="$ Price"
+        android:text="@string/default_detail_price"
         app:layout_constraintBottom_toTopOf="@+id/checkAddPizza"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintStart_toStartOf="@+id/cardView"

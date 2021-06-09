@@ -5,6 +5,7 @@ import com.centennial.deanpinlac_comp304sec002_lab2.enums.PaymentMethod;
 public class Payment {
     private PaymentMethod paymentMethod;
     private Card card;
+    private String subTotal;
     private String total;
 
     public PaymentMethod getPaymentMethod() {
@@ -29,5 +30,13 @@ public class Payment {
 
     public void setTotal(String total) {
         this.total = total;
+    }
+
+    public String getSubTotal() {
+        return subTotal;
+    }
+
+    public void setSubTotal(String subTotal) {
+        this.subTotal = subTotal;
     }
 }

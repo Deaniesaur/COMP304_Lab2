@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="Proceed to Payment"
+        android:text="@string/button_payment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -32,8 +32,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Your Cart"
-        android:textSize="30dp"
+        android:text="@string/label_checkout"
+        android:textSize="@dimen/fontSizeL"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Total: $"
+        android:text="@string/label_checkout_total"
         app:layout_constraintBottom_toTopOf="@+id/buttonPayment"
         app:layout_constraintEnd_toStartOf="@+id/textCheckoutPrice" />
 
@@ -53,7 +53,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Price"
+        android:text="@string/default_checkout_price"
         app:layout_constraintBottom_toTopOf="@+id/buttonPayment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonPayment" />
@@ -63,7 +63,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Price"
+        android:text="@string/default_checkout_subtotal"
         app:layout_constraintBottom_toTopOf="@+id/textCheckoutPrice"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonPayment" />
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:text="Sub-Total: $"
+        android:text="@string/label_checkout_subtotal"
         app:layout_constraintBottom_toTopOf="@+id/labelCheckoutTotal"
         app:layout_constraintEnd_toStartOf="@+id/textCheckoutSubTotal" />
 

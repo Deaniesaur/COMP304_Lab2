@@ -43,83 +43,130 @@
         android:id="@+id/cardPaymentSummary"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginTop="@dimen/margin10"
+        android:layout_marginStart="@dimen/margin10"
+        android:layout_marginEnd="@dimen/margin10"
         app:layout_constraintTop_toBottomOf="@id/recyclerOrderSummary"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+        app:layout_constraintRight_toRightOf="parent"
+        app:cardCornerRadius="@dimen/radius"
+        app:cardBackgroundColor="@color/corn">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+            
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/summaryPaymentGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="100dp"/>
 
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/summaryTotalGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="100dp"/>
+            
             <TextView
                 android:id="@+id/labelSummaryPaymentInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margin20"
                 android:text="@string/label_summary_payment_info"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                android:textSize="@dimen/fontSizeM"
+                app:layout_constraintTop_toBottomOf="@id/summaryPaymentTotal"
+                app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
                 android:id="@+id/summaryPaymentType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin40"
+                android:layout_marginTop="@dimen/margin10"
                 android:text="@string/default_payment_type"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toEndOf="@id/summaryPaymentGuideline"
                 app:layout_constraintTop_toBottomOf="@id/labelSummaryPaymentInfo" />
 
             <TextView
                 android:id="@+id/summaryPaymentEnding"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
                 android:text="@string/default_payment_ending"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toEndOf="@id/summaryPaymentGuideline"
                 app:layout_constraintTop_toBottomOf="@id/summaryPaymentType" />
+
+            <TextView
+                android:id="@+id/summaryPaymentSubtotal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_payment_subtotal"
+                app:layout_constraintStart_toEndOf="@id/summaryTotalGuideline"
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
                 android:id="@+id/summaryPaymentTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
+                android:layout_marginEnd="@dimen/margin10"
                 android:text="@string/default_payment_total"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/summaryPaymentEnding" />
+                android:textSize="@dimen/fontSizeL"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/summaryPaymentSubtotal"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_summary_type"
+                app:layout_constraintTop_toTopOf="@id/summaryPaymentType"
+                app:layout_constraintBottom_toBottomOf="@id/summaryPaymentType"
+                app:layout_constraintRight_toLeftOf="@id/summaryPaymentGuideline"
+                app:layout_constraintStart_toStartOf="@id/labelSummaryAddress"/>
 
-    </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_summary_card"
+                app:layout_constraintTop_toTopOf="@id/summaryPaymentEnding"
+                app:layout_constraintBottom_toBottomOf="@id/summaryPaymentEnding"
+                app:layout_constraintRight_toLeftOf="@id/summaryPaymentGuideline"
+                app:layout_constraintStart_toStartOf="@id/labelSummaryAddress"/>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardUserSummary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:layout_constraintTop_toBottomOf="@id/cardPaymentSummary"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_summary_subtotal"
+                app:layout_constraintTop_toTopOf="@id/summaryPaymentSubtotal"
+                app:layout_constraintBottom_toBottomOf="@id/summaryPaymentSubtotal"
+                app:layout_constraintRight_toLeftOf="@id/summaryTotalGuideline"/>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_summary_total"
+                app:layout_constraintTop_toTopOf="@id/summaryPaymentTotal"
+                app:layout_constraintBottom_toBottomOf="@id/summaryPaymentTotal"
+                app:layout_constraintEnd_toStartOf="@id/summaryTotalGuideline"/>
 
             <TextView
                 android:id="@+id/labelSummaryUserInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin20"
+                android:layout_marginStart="@dimen/margin20"
                 android:text="@string/label_summary_user_info"
+                android:textSize="@dimen/fontSizeM"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/summaryPaymentEnding" />
 
             <TextView
                 android:id="@+id/summaryUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin40"
+                android:layout_marginTop="@dimen/margin10"
                 android:text="@string/default_user_name"
+                app:layout_constraintStart_toEndOf="@id/summaryPaymentGuideline"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/labelSummaryUserInfo" />
 
@@ -127,8 +174,9 @@
                 android:id="@+id/summaryUserAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin40"
                 android:text="@string/default_user_address"
+                android:singleLine="false"
+                app:layout_constraintStart_toEndOf="@id/summaryPaymentGuideline"
                 app:layout_constraintTop_toBottomOf="@id/summaryUserName"
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
@@ -136,11 +184,39 @@
                 android:id="@+id/summaryUserPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="40dp"
                 android:text="@string/default_user_phone"
+                app:layout_constraintStart_toEndOf="@id/summaryPaymentGuideline"
                 app:layout_constraintTop_toBottomOf="@id/summaryUserAddress"
                 app:layout_constraintLeft_toLeftOf="parent"/>
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_user_name"
+                app:layout_constraintTop_toTopOf="@id/summaryUserName"
+                app:layout_constraintBottom_toBottomOf="@id/summaryUserName"
+                app:layout_constraintRight_toLeftOf="@id/summaryPaymentGuideline"
+                app:layout_constraintStart_toStartOf="@id/labelSummaryAddress"/>
 
+            <TextView
+                android:id="@+id/labelSummaryAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/margin10"
+                android:text="@string/label_user_address"
+                app:layout_constraintTop_toTopOf="@id/summaryUserAddress"
+                app:layout_constraintBottom_toBottomOf="@id/summaryUserAddress"
+                app:layout_constraintRight_toLeftOf="@id/summaryPaymentGuideline"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_user_phone"
+                app:layout_constraintTop_toTopOf="@id/summaryUserPhone"
+                app:layout_constraintBottom_toBottomOf="@id/summaryUserPhone"
+                app:layout_constraintRight_toLeftOf="@id/summaryPaymentGuideline"
+                app:layout_constraintStart_toStartOf="@id/labelSummaryAddress"/>
+            
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
@@ -151,7 +227,7 @@
         android:layout_height="wrap_content"
         android:text="@string/label_button_ok"
         android:textSize="@dimen/fontSizeM"
-        app:layout_constraintTop_toBottomOf="@id/cardUserSummary"
+        app:layout_constraintTop_toBottomOf="@id/cardPaymentSummary"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>

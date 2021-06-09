@@ -14,13 +14,15 @@
         app:layout_constraintEnd_toEndOf="@+id/btnOrder"
         app:layout_constraintStart_toStartOf="@+id/btnOrder"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pizza_logo_square" />
+        app:srcCompat="@drawable/pizza_logo_square"
+        android:contentDescription="@string/logo_description" />
 
     <Button
         android:id="@+id/btnOrder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Order"
+        android:text="@string/label_button_order"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

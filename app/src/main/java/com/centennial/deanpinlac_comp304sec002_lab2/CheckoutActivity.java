@@ -25,6 +25,7 @@ public class CheckoutActivity extends AppCompatActivity {
 
     private List<Pizza> pizzaList;
     private SharedPreferences sharedPref;
+    private String subtotalString;
     private String totalString;
 
     @Override
@@ -50,6 +51,7 @@ public class CheckoutActivity extends AppCompatActivity {
         Button buttonPayment = findViewById(R.id.buttonPayment);
         buttonPayment.setOnClickListener( v -> {
             //Save Total Payment
+            sharedPref.edit().putString("pizza_subtotal", totalString).apply();
             sharedPref.edit().putString("pizza_total", totalString).apply();
 
             Intent intent = new Intent(CheckoutActivity.this, PaymentActivity.class);
@@ -66,8 +68,8 @@ public class CheckoutActivity extends AppCompatActivity {
         for(Pizza pizza: pizzaList){
             subTotal += pizza.getSubTotal();
         }
-
-        textSubTotal.setText(df.format(subTotal));
+        subtotalString = df.format(subTotal);
+        textSubTotal.setText(subtotalString);
 
         double total = subTotal * 1.13;
         totalString = df.format(total);

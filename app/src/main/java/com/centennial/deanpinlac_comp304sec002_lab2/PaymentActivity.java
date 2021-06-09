@@ -73,8 +73,10 @@ public class PaymentActivity extends AppCompatActivity {
                 Card card = getCardInfo();
                 payment.setCard(card);
             }
-            //Retrieve Payment Total
+            //Retrieve Payment Subtotal and Total
+            String subTotal = sharedPref.getString("pizza_subtotal", "0.00");
             String total = sharedPref.getString("pizza_total", "0.00");
+            payment.setSubTotal(subTotal);
             payment.setTotal(total);
 
             //Save Payment Info

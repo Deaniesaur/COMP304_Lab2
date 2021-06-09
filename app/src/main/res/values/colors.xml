@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    //custom
+    <color name="terracotta">#945D60</color>
+    <color name="herb">#626E60</color>
+    <color name="chilli">#AF473C</color>
+    <color name="charcoal">#3C3C3C</color>
+    <color name="yellow">#f5ce23</color>
+    <color name="corn">#fff380</color>
+    <color name="brightCoral">#f52430</color>
 </resources>
