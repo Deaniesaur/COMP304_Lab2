@@ -11,6 +11,7 @@ public class Pizza {
     private Crust crust;
     private Price price;
     private double subTotal;
+    private String toppings;
 
     public Pizza(PizzaName pizzaName, Price price){
         this.name = pizzaName;
@@ -83,5 +84,13 @@ public class Pizza {
 
     public double getSubTotal(){
         return subTotal;
+    }
+
+    public String getToppings() {
+        return toppings;
+    }
+
+    public void setToppings(String toppings) {
+        this.toppings = toppings;
     }
 }

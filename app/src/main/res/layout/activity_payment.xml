@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentActivity">
+
+    <RadioGroup
+        android:id="@+id/groupPaymentMethods"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/labelPayment"
+        app:layout_constraintBottom_toTopOf="@id/cardViewCardDetails">
+
+        <RadioButton
+            android:id="@+id/radioCash"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:enabled="true"
+            android:text="Cash" />
+
+        <RadioButton
+            android:id="@+id/radioCredit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Credit Card" />
+
+        <RadioButton
+            android:id="@+id/radioDebit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Debit Card" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/labelPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="Payment Method"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@id/groupPaymentMethods"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonCustomerInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proceed to Customer Info"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardViewCardDetails"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardViewCardDetails"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/groupPaymentMethods"
+        app:layout_constraintBottom_toTopOf="@id/buttonCustomerInfo">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cardGuideline1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="100dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cardGuideline2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="100dp" />
+
+            <TextView
+                android:id="@+id/labelCardName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                app:layout_constraintBottom_toBottomOf="@id/editCardName"
+                app:layout_constraintLeft_toLeftOf="@id/labelCardExpiry"
+                app:layout_constraintRight_toLeftOf="@id/cardGuideline1"
+                app:layout_constraintTop_toTopOf="@id/editCardName" />
+
+            <TextView
+                android:id="@+id/labelCardNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Number:"
+                app:layout_constraintBottom_toBottomOf="@id/editCardNumber"
+                app:layout_constraintRight_toLeftOf="@id/cardGuideline1"
+                app:layout_constraintStart_toStartOf="@+id/labelCardExpiry"
+                app:layout_constraintTop_toTopOf="@id/editCardNumber" />
+
+            <TextView
+                android:id="@+id/labelCardExpiry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Expiry Date:"
+                app:layout_constraintBottom_toBottomOf="@id/editCardExpiry"
+                app:layout_constraintRight_toLeftOf="@id/cardGuideline1"
+                app:layout_constraintTop_toBottomOf="@id/labelCardNumber"
+                app:layout_constraintTop_toTopOf="@id/editCardExpiry" />
+
+            <TextView
+                android:id="@+id/labelCardSecurity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CVV:"
+                app:layout_constraintBottom_toBottomOf="@id/editCardSecurity"
+                app:layout_constraintRight_toLeftOf="@id/cardGuideline2"
+                app:layout_constraintTop_toBottomOf="@id/labelCardNumber"
+                app:layout_constraintTop_toTopOf="@id/editCardSecurity" />
+
+            <EditText
+                android:id="@+id/editCardName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="FirstName LastName"
+                android:inputType="text"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/cardGuideline1"
+                app:layout_constraintStart_toStartOf="@+id/cardGuideline1"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editCardNumber"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="0000000000000000"
+                android:inputType="number"
+                android:maxLength="16"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/cardGuideline1"
+                app:layout_constraintStart_toStartOf="@+id/cardGuideline1"
+                app:layout_constraintTop_toBottomOf="@id/editCardName" />
+
+            <EditText
+                android:id="@+id/editCardExpiry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="MMYY"
+                android:inputType="number"
+                android:maxLength="4"
+                android:maxLines="1"
+                app:layout_constraintLeft_toRightOf="@id/cardGuideline1"
+                app:layout_constraintTop_toBottomOf="@id/editCardNumber" />
+
+            <EditText
+                android:id="@+id/editCardSecurity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="000"
+                android:inputType="number"
+                android:maxLength="3"
+                android:maxLines="1"
+                app:layout_constraintBottom_toBottomOf="@id/editCardExpiry"
+                app:layout_constraintLeft_toRightOf="@id/cardGuideline2"
+                app:layout_constraintStart_toStartOf="@+id/cardGuideline2"
+                app:layout_constraintTop_toTopOf="@id/editCardExpiry" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

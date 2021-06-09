@@ -12,12 +12,12 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Pizza;
-import com.google.gson.Gson;
+import com.centennial.deanpinlac_comp304sec002_lab2.utils.Common;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Menu extends AppCompatActivity {
+public class MenuActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPref;
     private final List<Pizza> pizzaList = new ArrayList<>();
@@ -30,6 +30,15 @@ public class Menu extends AppCompatActivity {
         sharedPref = getSharedPreferences(
                 "pizza_pref", Context.MODE_PRIVATE);
 
+        Button buttonCheckout = findViewById(R.id.buttonCheckout);
+        buttonCheckout.setOnClickListener(v -> {
+            //Saved List of Pizza Orders
+            String jsonPizzaList = Common.convertToJson(pizzaList);
+            sharedPref.edit().putString("pizza_cart", jsonPizzaList).apply();
+
+            Intent intent = new Intent(MenuActivity.this, CheckoutActivity.class);
+            startActivity(intent);
+        });
     }
 
     @Override
@@ -38,8 +47,9 @@ public class Menu extends AppCompatActivity {
 
         String jsonPizza = sharedPref.getString("add_pizza", null);
         if(jsonPizza != null){
-            Gson gson = new Gson();
-            Pizza pizza = gson.fromJson(jsonPizza, Pizza.class);
+//            Gson gson = new Gson();
+//            Pizza pizza = gson.fromJson(jsonPizza, Pizza.class);
+            Pizza pizza = Common.convertJsonToObject(jsonPizza, Pizza.class);
 
             //Add pizza
             pizzaList.add(pizza);
@@ -72,7 +82,7 @@ public class Menu extends AppCompatActivity {
 
         sharedPref.edit().putInt("pizza_choice", item.getItemId()).apply();
 
-        Intent intent = new Intent(Menu.this, PizzaDetails.class);
+        Intent intent = new Intent(MenuActivity.this, PizzaDetailsActivity.class);
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }

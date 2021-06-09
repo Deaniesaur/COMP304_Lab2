@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CustomerInfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardUserDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardAdditional">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/userInfoGuidance"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="110dp"/>
+
+            <TextView
+                android:id="@+id/labelUserInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Your Info"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <EditText
+                android:id="@+id/editUserName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="FirstName LastName"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/userInfoGuidance"
+                app:layout_constraintStart_toStartOf="@+id/userInfoGuidance"
+                app:layout_constraintTop_toBottomOf="@id/labelUserInfo" />
+
+            <EditText
+                android:id="@+id/editUserStreet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Street"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/userInfoGuidance"
+                app:layout_constraintStart_toStartOf="@+id/userInfoGuidance"
+                app:layout_constraintTop_toBottomOf="@id/editUserName" />
+
+            <EditText
+                android:id="@+id/editUserCity"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/userInfoGuidance"
+                app:layout_constraintStart_toStartOf="@+id/userInfoGuidance"
+                app:layout_constraintTop_toBottomOf="@id/editUserStreet" />
+
+            <EditText
+                android:id="@+id/editUserState"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="State"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/userInfoGuidance"
+                app:layout_constraintStart_toStartOf="@+id/userInfoGuidance"
+                app:layout_constraintTop_toBottomOf="@id/editUserCity" />
+
+            <EditText
+                android:id="@+id/editUserPostal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Postal Code"
+                android:maxLength="6"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/userInfoGuidance"
+                app:layout_constraintStart_toStartOf="@+id/userInfoGuidance"
+                app:layout_constraintTop_toBottomOf="@id/editUserState" />
+
+            <EditText
+                android:id="@+id/editUserPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Phone Number"
+                android:maxLength="10"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/userInfoGuidance"
+                app:layout_constraintStart_toStartOf="@+id/userInfoGuidance"
+                app:layout_constraintTop_toBottomOf="@id/editUserPostal" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                app:layout_constraintTop_toTopOf="@id/editUserName"
+                app:layout_constraintBottom_toBottomOf="@id/editUserName"
+                app:layout_constraintRight_toLeftOf="@id/userInfoGuidance"
+                app:layout_constraintLeft_toLeftOf="@+id/labelPostal"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Street:"
+                app:layout_constraintTop_toTopOf="@id/editUserStreet"
+                app:layout_constraintBottom_toBottomOf="@id/editUserStreet"
+                app:layout_constraintRight_toLeftOf="@id/userInfoGuidance"
+                app:layout_constraintLeft_toLeftOf="@+id/labelPostal"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="City:"
+                app:layout_constraintTop_toTopOf="@id/editUserCity"
+                app:layout_constraintBottom_toBottomOf="@id/editUserCity"
+                app:layout_constraintRight_toLeftOf="@id/userInfoGuidance"
+                app:layout_constraintLeft_toLeftOf="@+id/labelPostal"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="State:"
+                app:layout_constraintTop_toTopOf="@id/editUserState"
+                app:layout_constraintBottom_toBottomOf="@id/editUserState"
+                app:layout_constraintRight_toLeftOf="@id/userInfoGuidance"
+                app:layout_constraintLeft_toLeftOf="@+id/labelPostal"/>
+
+            <TextView
+                android:id="@+id/labelPostal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Postal Code:"
+                app:layout_constraintTop_toTopOf="@id/editUserPostal"
+                app:layout_constraintBottom_toBottomOf="@id/editUserPostal"
+                app:layout_constraintRight_toLeftOf="@id/userInfoGuidance"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                app:layout_constraintTop_toTopOf="@id/editUserPhone"
+                app:layout_constraintBottom_toBottomOf="@id/editUserPhone"
+                app:layout_constraintRight_toLeftOf="@id/userInfoGuidance"
+                app:layout_constraintLeft_toLeftOf="@+id/labelPostal"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAdditional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/cardUserDetails"
+        app:layout_constraintBottom_toTopOf="@id/buttonCompleteOrder">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/cardAdditionalGuideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="110dp" />
+
+            <TextView
+                android:id="@+id/labelAdditional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="Additional Info - Favorites"
+                android:textSize="20sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"/>
+
+            <EditText
+                android:id="@+id/editUserSauce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="White Garlic, BBQ, etc..."
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/cardAdditionalGuideline"
+                app:layout_constraintStart_toStartOf="@+id/cardAdditionalGuideline"
+                app:layout_constraintTop_toBottomOf="@id/labelAdditional" />
+
+            <EditText
+                android:id="@+id/editUserDrink"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Coke, Pepsi, Orange, etc..."
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/cardAdditionalGuideline"
+                app:layout_constraintStart_toStartOf="@+id/cardAdditionalGuideline"
+                app:layout_constraintTop_toBottomOf="@id/editUserSauce" />
+
+            <EditText
+                android:id="@+id/editUserMeat"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:hint="Beef, Pork, or Chicken"
+                android:maxLines="1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/cardAdditionalGuideline"
+                app:layout_constraintStart_toStartOf="@+id/cardAdditionalGuideline"
+                app:layout_constraintTop_toBottomOf="@id/editUserDrink" />
+
+            <TextView
+                android:id="@+id/labelSauce"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Sauce:"
+                app:layout_constraintTop_toTopOf="@id/editUserSauce"
+                app:layout_constraintBottom_toBottomOf="@id/editUserSauce"
+                app:layout_constraintRight_toLeftOf="@id/cardAdditionalGuideline" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Drink:"
+                app:layout_constraintTop_toTopOf="@id/editUserDrink"
+                app:layout_constraintBottom_toBottomOf="@id/editUserDrink"
+                app:layout_constraintRight_toLeftOf="@id/cardAdditionalGuideline"
+                app:layout_constraintLeft_toLeftOf="@+id/labelSauce"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Meat:"
+                app:layout_constraintTop_toTopOf="@id/editUserMeat"
+                app:layout_constraintBottom_toBottomOf="@id/editUserMeat"
+                app:layout_constraintRight_toLeftOf="@id/cardAdditionalGuideline"
+                app:layout_constraintLeft_toLeftOf="@+id/labelSauce"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/buttonCompleteOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Proceed to Complete Order"
+        app:layout_constraintTop_toBottomOf="@id/cardAdditional"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

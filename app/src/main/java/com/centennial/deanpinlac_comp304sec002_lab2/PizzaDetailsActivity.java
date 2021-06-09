@@ -19,11 +19,12 @@ import com.centennial.deanpinlac_comp304sec002_lab2.enums.PizzaName;
 import com.centennial.deanpinlac_comp304sec002_lab2.enums.Price;
 import com.centennial.deanpinlac_comp304sec002_lab2.enums.Size;
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Pizza;
+import com.centennial.deanpinlac_comp304sec002_lab2.utils.Common;
 import com.google.gson.Gson;
 
 import static android.widget.AdapterView.*;
 
-public class PizzaDetails extends AppCompatActivity {
+public class PizzaDetailsActivity extends AppCompatActivity {
 
     private Pizza pizza;
     private SharedPreferences sharedPref;
@@ -68,8 +69,7 @@ public class PizzaDetails extends AppCompatActivity {
                 if(radioThin.isChecked()) pizza.setCrust(Crust.Thin);
                 else pizza.setCrust(Crust.Thick);
 
-                Gson gson = new Gson();
-                String jsonPizza = gson.toJson(pizza);
+                String jsonPizza = Common.convertToJson(pizza);
                 sharedPref.edit().putString("add_pizza", jsonPizza).apply();
                 finish();
             }
@@ -113,6 +113,7 @@ public class PizzaDetails extends AppCompatActivity {
 
         //Set Value ot Ingredients TextView
         textIngredients.setText(formatIngredients(ingredients));
+        pizza.setToppings(formatIngredients(ingredients));
         //Update Price
         updatePrice();
     }
