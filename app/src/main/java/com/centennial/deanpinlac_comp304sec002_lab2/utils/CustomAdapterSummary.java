@@ -24,5 +24,6 @@ public class CustomAdapterSummary extends CustomAdapter{
         viewHolder.rowPrice.setText(Common.formatDecPlace2(pizza.getSubTotal()));
         viewHolder.rowToppings.setVisibility(View.GONE);
         viewHolder.labelToppings.setVisibility(View.INVISIBLE);
+        viewHolder.buttonDelete.setVisibility(View.GONE);
     }
 }

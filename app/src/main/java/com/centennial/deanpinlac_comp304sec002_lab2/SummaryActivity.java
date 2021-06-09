@@ -71,6 +71,11 @@ public class SummaryActivity extends AppCompatActivity {
 
         Button buttonSummaryOK = findViewById(R.id.buttonSummaryOK);
         buttonSummaryOK.setOnClickListener(v -> {
+            //Removed Saved Data
+            sharedPref.edit().remove("pizza_cart").apply();
+            sharedPref.edit().remove("pizza_payment").apply();
+            sharedPref.edit().remove("pizza_customer").apply();
+
             Intent intent = new Intent(SummaryActivity.this, MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             startActivity(intent);

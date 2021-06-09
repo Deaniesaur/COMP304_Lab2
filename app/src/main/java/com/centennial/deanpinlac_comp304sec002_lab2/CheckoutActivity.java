@@ -41,7 +41,7 @@ public class CheckoutActivity extends AppCompatActivity {
             Type pizzaListType = new TypeToken<ArrayList<Pizza>>(){}.getType();
             pizzaList = Common.convertJsonToObject(jsonPizzaList, pizzaListType);
 
-            sharedPref.edit().remove("pizza_cart").apply();
+//            sharedPref.edit().remove("pizza_cart").apply();
         }
 
         RecyclerView recyclerCart = findViewById(R.id.recyclerCart);
@@ -51,7 +51,7 @@ public class CheckoutActivity extends AppCompatActivity {
         buttonPayment = findViewById(R.id.buttonPayment);
         buttonPayment.setOnClickListener( v -> {
             //Save Total Payment
-            sharedPref.edit().putString("pizza_subtotal", totalString).apply();
+            sharedPref.edit().putString("pizza_subtotal", subtotalString).apply();
             sharedPref.edit().putString("pizza_total", totalString).apply();
 
             Intent intent = new Intent(CheckoutActivity.this, PaymentActivity.class);
