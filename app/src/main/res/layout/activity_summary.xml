@@ -11,8 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Your Order is Complete!"
-        android:textSize="30sp"
+        android:text="@string/label_order_complete"
+        android:textSize="@dimen/fontSizeL"
         app:layout_constraintBottom_toTopOf="@id/labelSummary"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Summary"
-        android:textSize="20sp"
+        android:text="@string/label_summary"
+        android:textSize="@dimen/fontSizeM"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/labelOrderCompleted" />
@@ -56,7 +56,7 @@
                 android:id="@+id/labelSummaryPaymentInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Payment Information"
+                android:text="@string/label_summary_payment_info"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -65,8 +65,8 @@
                 android:id="@+id/summaryPaymentType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="Payment Type"
+                android:layout_marginStart="@dimen/margin40"
+                android:text="@string/default_payment_type"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/labelSummaryPaymentInfo" />
 
@@ -74,8 +74,8 @@
                 android:id="@+id/summaryPaymentEnding"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="Payment Ending with 0000"
+                android:layout_marginStart="40dp"
+                android:text="@string/default_payment_ending"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/summaryPaymentType" />
 
@@ -83,8 +83,8 @@
                 android:id="@+id/summaryPaymentTotal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="Payment Total"
+                android:layout_marginStart="40dp"
+                android:text="@string/default_payment_total"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/summaryPaymentEnding" />
 
@@ -109,7 +109,7 @@
                 android:id="@+id/labelSummaryUserInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Customer Information"
+                android:text="@string/label_summary_user_info"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -118,8 +118,8 @@
                 android:id="@+id/summaryUserName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="User Name"
+                android:layout_marginStart="@dimen/margin40"
+                android:text="@string/default_user_name"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/labelSummaryUserInfo" />
 
@@ -127,8 +127,8 @@
                 android:id="@+id/summaryUserAddress"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="User Address"
+                android:layout_marginStart="@dimen/margin40"
+                android:text="@string/default_user_address"
                 app:layout_constraintTop_toBottomOf="@id/summaryUserName"
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
@@ -136,8 +136,8 @@
                 android:id="@+id/summaryUserPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="User Phone"
+                android:layout_marginStart="40dp"
+                android:text="@string/default_user_phone"
                 app:layout_constraintTop_toBottomOf="@id/summaryUserAddress"
                 app:layout_constraintLeft_toLeftOf="parent"/>
 
@@ -149,8 +149,11 @@
         android:id="@+id/buttonSummaryOK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/label_button_ok"
+        android:textSize="@dimen/fontSizeM"
         app:layout_constraintTop_toBottomOf="@id/cardUserSummary"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

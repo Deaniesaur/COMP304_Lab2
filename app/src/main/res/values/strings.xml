@@ -7,6 +7,20 @@
     <string name="pizza_name_canadian">Canadian Pizza</string>
     <string name="text_use_menu">Use the Options Menu to View the Pizza Menu</string>
     <string name="text_default_ing">Ingredient1\nIngredient2\nIngredient3</string>
+    <string name="label_button_order">Order</string>
+    <string name="logo_description">Pizza Logo</string>
+    <string name="label_button_checkout">Checkout</string>
+    <string name="label_button_ok">OK</string>
+    <string name="default_user_phone">User Phone</string>
+    <string name="default_user_address">User Address</string>
+    <string name="default_user_name">User Name</string>
+    <string name="label_summary_user_info">Customer Information</string>
+    <string name="default_payment_total">Payment Total</string>
+    <string name="default_payment_ending">Payment Ending with 0000</string>
+    <string name="default_payment_type">Payment Type</string>
+    <string name="label_summary_payment_info">Payment Information</string>
+    <string name="label_summary">Summary</string>
+    <string name="label_order_complete">Your Order is Complete!</string>
 
     <string-array name="pizza_sizes">
         <item>Small</item>
