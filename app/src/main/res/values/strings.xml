@@ -8,6 +8,12 @@
     <string name="text_use_menu">Use the Options Menu to View the Pizza Menu</string>
     <string name="text_default_ing">Ingredient1\nIngredient2\nIngredient3</string>
 
+    <string-array name="pizza_sizes">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
     <string-array name="canadian_pizza_ing">
         <item>Pepperoni</item>
         <item>Bacon Crumble</item>

@@ -7,43 +7,129 @@
     tools:context=".PizzaDetails">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerSize">
 
         <LinearLayout
             android:id="@+id/layoutCard"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/img_pizza_prev"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
                 android:layout_margin="10dp"
-                app:srcCompat="@drawable/canadian_pizza"
-                android:contentDescription="Sample Image of Pizza" />
+                android:adjustViewBounds="true"
+                android:contentDescription="Sample Image of Pizza"
+                app:srcCompat="@drawable/canadian_pizza" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="Ingredients:"/>
+                android:text="Ingredients:" />
 
             <TextView
                 android:id="@+id/text_pizza_ing"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:text="@string/text_default_ing"/>
+                android:text="@string/text_default_ing" />
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Size: "
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupSize"
+        app:layout_constraintStart_toStartOf="@+id/labelCrustSize"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <Spinner
+        android:id="@+id/spinnerSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroupSize"
+        app:layout_constraintEnd_toEndOf="@+id/radioGroupSize"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/labelCrustSize"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crust: "
+        app:layout_constraintBottom_toTopOf="@+id/checkAddPizza"
+        app:layout_constraintEnd_toStartOf="@+id/radioGroupSize"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerSize"
+        app:layout_constraintBottom_toTopOf="@+id/checkAddPizza">
+
+        <RadioButton
+            android:id="@+id/radioThin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thin"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioThick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thick" />
+
+    </RadioGroup>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="140dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left" />
+
+    <CheckBox
+        android:id="@+id/checkAddPizza"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Pizza to Cart"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView" />
+
+    <TextView
+        android:id="@+id/textPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="$ Price"
+        app:layout_constraintBottom_toTopOf="@+id/checkAddPizza"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintStart_toStartOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupSize" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
