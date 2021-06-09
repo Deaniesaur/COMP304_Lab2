@@ -1,16 +1,18 @@
 package com.centennial.deanpinlac_comp304sec002_lab2.utils;
 
+import android.content.Context;
 import android.view.View;
 
 import androidx.annotation.NonNull;
 
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Pizza;
 
+import java.util.ConcurrentModificationException;
 import java.util.List;
 
 public class CustomAdapterSummary extends CustomAdapter{
-    public CustomAdapterSummary(List<Pizza> dataSet) {
-        super(dataSet);
+    public CustomAdapterSummary(List<Pizza> dataSet, Context context) {
+        super(dataSet, context);
     }
 
     @Override

@@ -1,5 +1,10 @@
 package com.centennial.deanpinlac_comp304sec002_lab2.utils;
 
+import android.content.Context;
+import android.text.Html;
+import android.text.Spanned;
+import android.widget.Toast;
+
 import com.google.gson.Gson;
 
 import java.lang.reflect.Type;
@@ -19,5 +24,12 @@ public class Common {
     public static String formatDecPlace2(double value){
         DecimalFormat df = new DecimalFormat("$ #.00");
         return df.format(value);
+    }
+
+    public static void showError(String missing, Context context) {
+        String message = "Invalid " + missing;
+        Spanned html = Html.fromHtml("<font color='#000000'><b>" + message + "</b></font>");
+        Toast toast = Toast.makeText(context, html, Toast.LENGTH_SHORT);
+        toast.show();
     }
 }

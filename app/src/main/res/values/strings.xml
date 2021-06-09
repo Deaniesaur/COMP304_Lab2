@@ -62,7 +62,6 @@
     <string name="label_user_city">City:</string>
     <string name="label_user_state">State:</string>
     <string name="label_user_postal">Postal Code:</string>
-    <string name="label_user_phone">Phone:</string>
     <string name="label_user_header2">Additional Info - Favorites</string>
     <string name="hint_fav_sauce">White Garlic, BBQ, etc...</string>
     <string name="hint_fav_drink">Coke, Pepsi, Orange, etc...</string>

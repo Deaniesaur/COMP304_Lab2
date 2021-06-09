@@ -65,7 +65,7 @@ public class SummaryActivity extends AppCompatActivity {
         }
 
         RecyclerView recyclerOrderSummary = findViewById(R.id.recyclerOrderSummary);
-        CustomAdapterSummary adapterSummary = new CustomAdapterSummary(pizzaList);
+        CustomAdapterSummary adapterSummary = new CustomAdapterSummary(pizzaList, this);
         recyclerOrderSummary.setAdapter(adapterSummary);
         recyclerOrderSummary.setLayoutManager(new LinearLayoutManager(this));
 
@@ -82,10 +82,12 @@ public class SummaryActivity extends AppCompatActivity {
         TextView summaryPaymentEnding = findViewById(R.id.summaryPaymentEnding);
         TextView summaryPaymentSubTotal = findViewById(R.id.summaryPaymentSubtotal);
         TextView summaryPaymentTotal = findViewById(R.id.summaryPaymentTotal);
+        TextView labelSummaryCardEnding = findViewById(R.id.labelSummaryCardEnding);
 
         summaryPaymentType.setText(payment.getPaymentMethod().toString());
         if(payment.getPaymentMethod() == PaymentMethod.Cash){
             summaryPaymentEnding.setVisibility(View.GONE);
+            labelSummaryCardEnding.setVisibility(View.GONE);
         }else{
             String cardDesc = "Ends with " + payment.getCard().getNumber().substring(12,16);
             summaryPaymentEnding.setText(cardDesc);

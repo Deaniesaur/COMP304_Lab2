@@ -6,10 +6,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Address;
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Customer;
@@ -85,54 +85,36 @@ public class CustomerInfoActivity extends AppCompatActivity {
 
     private boolean validateInput(){
         if(TextUtils.isEmpty(editName.getText().toString())){
-            showError("Name");
+            Common.showError("Name", this);
             return false;
         }
 
         if(TextUtils.isEmpty(editStreet.getText().toString())){
-            showError("Street");
+            Common.showError("Street", this);
             return false;
         }
 
         if(TextUtils.isEmpty(editCity.getText().toString())){
-            showError("City");
+            Common.showError("City", this);
             return false;
         }
 
         if(TextUtils.isEmpty(editState.getText().toString())){
-            showError("State");
+            Common.showError("State", this);
             return false;
         }
 
-        if(TextUtils.isEmpty(editPostal.getText().toString())){
-            showError("Postal Code");
+        String postal = editPostal.getText().toString();
+        if(TextUtils.isEmpty(postal) || postal.length() < 6){
+            Common.showError("Postal", this);
             return false;
         }
 
-        if(TextUtils.isEmpty(editPhone.getText().toString())){
-            showError("Phone Number");
-            return false;
-        }
-
-        if(TextUtils.isEmpty(editSauce.getText().toString())){
-            showError("Sauce");
-            return false;
-        }
-
-        if(TextUtils.isEmpty(editDrink.getText().toString())){
-            showError("Drink");
-            return false;
-        }
-
-        if(TextUtils.isEmpty(editMeat.getText().toString())){
-            showError("Meat");
+        String phone = editPhone.getText().toString();
+        if(TextUtils.isEmpty(phone) || phone.length() < 10){
+            Common.showError("Phone", this);
             return false;
         }
         return true;
-    }
-
-    private void showError(String missing){
-        String message = "Please input " + missing;
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 }

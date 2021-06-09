@@ -13,14 +13,16 @@ import android.widget.Button;
 
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Pizza;
 import com.centennial.deanpinlac_comp304sec002_lab2.utils.Common;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MenuActivity extends AppCompatActivity {
 
     private SharedPreferences sharedPref;
-    private final List<Pizza> pizzaList = new ArrayList<>();
+    private List<Pizza> pizzaList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,26 +49,35 @@ public class MenuActivity extends AppCompatActivity {
 
         String jsonPizza = sharedPref.getString("add_pizza", null);
         if(jsonPizza != null){
-//            Gson gson = new Gson();
-//            Pizza pizza = gson.fromJson(jsonPizza, Pizza.class);
             Pizza pizza = Common.convertJsonToObject(jsonPizza, Pizza.class);
 
             //Add pizza
             pizzaList.add(pizza);
 
-            //Update buttonCheckout
-            Button buttonCheckout = findViewById(R.id.buttonCheckout);
-            int cartSize = pizzaList.size();
-            if(cartSize > 0){
-                buttonCheckout.setText("Checkout (" + cartSize + " items)");
-                buttonCheckout.setEnabled(true);
-            }else{
-                buttonCheckout.setText("Checkout");
-                buttonCheckout.setEnabled(false);
-            }
-
             //Remove pizza from SharedPref
             sharedPref.edit().remove("add_pizza").apply();
+        }
+
+        //Retrieved Updated Cart
+        String jsonPizzaList = sharedPref.getString("pizza_cart", null);
+        if(jsonPizzaList != null){
+            Type pizzaListType = new TypeToken<ArrayList<Pizza>>(){}.getType();
+            pizzaList = Common.convertJsonToObject(jsonPizzaList, pizzaListType);
+
+            //Update buttonCheckout
+
+            //Remove pizza from SharedPref
+            sharedPref.edit().remove("pizza_cart").apply();
+        }
+
+        Button buttonCheckout = findViewById(R.id.buttonCheckout);
+        int cartSize = pizzaList.size();
+        if(cartSize > 0){
+            buttonCheckout.setText("Checkout (" + cartSize + " items)");
+            buttonCheckout.setEnabled(true);
+        }else{
+            buttonCheckout.setText("Checkout");
+            buttonCheckout.setEnabled(false);
         }
     }
 

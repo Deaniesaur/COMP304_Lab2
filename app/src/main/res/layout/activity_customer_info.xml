@@ -92,7 +92,7 @@
                 android:hint="@string/default_user_postal"
                 android:maxLength="6"
                 android:maxLines="1"
-                android:inputType="textPostalAddress"
+                android:inputType="textPostalAddress|textCapCharacters"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintLeft_toRightOf="@id/userInfoGuidance"
                 app:layout_constraintStart_toStartOf="@+id/userInfoGuidance"

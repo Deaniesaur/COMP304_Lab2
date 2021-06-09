@@ -119,15 +119,17 @@ public class PizzaDetailsActivity extends AppCompatActivity {
     }
 
     private String formatIngredients(String[] strArray){
-        String output = "";
+        StringBuilder output = new StringBuilder();
         for(String str: strArray){
-            output += "\u2022 " + str + "\n";
+            output.append("\u2022 ").append(str).append("\n");
         }
-        return output;
+        return output.toString();
     }
     
     private void updatePrice(){
         TextView textPrice = findViewById(R.id.textPrice);
-        textPrice.setText("$ " + pizza.getSubTotal());
+        String priceStr = "$ ";
+        priceStr = priceStr.concat(Double.toString(pizza.getSubTotal()));
+        textPrice.setText(priceStr);
     }
 }

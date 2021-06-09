@@ -23,11 +23,11 @@ import java.util.List;
 
 public class CheckoutActivity extends AppCompatActivity {
 
-    private List<Pizza> pizzaList;
+    private static List<Pizza> pizzaList;
     private SharedPreferences sharedPref;
     private String subtotalString;
     private String totalString;
-
+    private Button buttonPayment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,15 +40,15 @@ public class CheckoutActivity extends AppCompatActivity {
         if(jsonPizzaList!= null){
             Type pizzaListType = new TypeToken<ArrayList<Pizza>>(){}.getType();
             pizzaList = Common.convertJsonToObject(jsonPizzaList, pizzaListType);
+
+            sharedPref.edit().remove("pizza_cart").apply();
         }
 
         RecyclerView recyclerCart = findViewById(R.id.recyclerCart);
-        recyclerCart.setAdapter(new CustomAdapter(pizzaList));
+        recyclerCart.setAdapter(new CustomAdapter(pizzaList, this));
         recyclerCart.setLayoutManager(new LinearLayoutManager(this));
 
-        updatePrices();
-
-        Button buttonPayment = findViewById(R.id.buttonPayment);
+        buttonPayment = findViewById(R.id.buttonPayment);
         buttonPayment.setOnClickListener( v -> {
             //Save Total Payment
             sharedPref.edit().putString("pizza_subtotal", totalString).apply();
@@ -57,6 +57,8 @@ public class CheckoutActivity extends AppCompatActivity {
             Intent intent = new Intent(CheckoutActivity.this, PaymentActivity.class);
             startActivity(intent);
         });
+
+        updatePrices();
     }
 
     private void updatePrices(){
@@ -74,5 +76,17 @@ public class CheckoutActivity extends AppCompatActivity {
         double total = subTotal * 1.13;
         totalString = df.format(total);
         textTotal.setText(totalString);
+
+        if(pizzaList.size() > 0)
+            buttonPayment.setEnabled(true);
+        else
+            buttonPayment.setEnabled(false);
+    }
+
+    public void itemRemoved(){
+        updatePrices();
+
+        String jsonPizzaList = Common.convertToJson(pizzaList);
+        sharedPref.edit().putString("pizza_cart", jsonPizzaList).apply();
     }
 }

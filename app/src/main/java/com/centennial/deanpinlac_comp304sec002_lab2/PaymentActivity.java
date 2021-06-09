@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spanned;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +21,8 @@ import com.centennial.deanpinlac_comp304sec002_lab2.models.Card;
 import com.centennial.deanpinlac_comp304sec002_lab2.models.Payment;
 import com.centennial.deanpinlac_comp304sec002_lab2.utils.Common;
 import com.centennial.deanpinlac_comp304sec002_lab2.utils.CustomAdapter;
+
+import java.util.StringJoiner;
 
 public class PaymentActivity extends AppCompatActivity {
 
@@ -100,29 +104,27 @@ public class PaymentActivity extends AppCompatActivity {
 
     private boolean validateCard(){
         if(TextUtils.isEmpty(editCardName.getText().toString())){
-            showError("Name");
+            Common.showError("Name", this);
             return false;
         }
 
-        if(TextUtils.isEmpty(editCardNumber.getText().toString())){
-            showError("Street");
+        String number = editCardNumber.getText().toString();
+        if(TextUtils.isEmpty(number) || number.length() < 16){
+            Common.showError("Card Number", this);
             return false;
         }
 
-        if(TextUtils.isEmpty(editCardExpiry.getText().toString())){
-            showError("City");
+        String expiry = editCardExpiry.getText().toString();
+        if(TextUtils.isEmpty(expiry) || expiry.length() < 4){
+            Common.showError("Expiry Date", this);
             return false;
         }
 
-        if(TextUtils.isEmpty(editCardSecurity.getText().toString())){
-            showError("State");
+        String security = editCardSecurity.getText().toString();
+        if(TextUtils.isEmpty(security) || security.length() < 3){
+            Common.showError("Security", this);
             return false;
         }
         return true;
-    }
-
-    private void showError(String missing) {
-        String message = "Please input " + missing;
-        Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 }
