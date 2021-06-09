@@ -18,6 +18,8 @@ public class CustomAdapterSummary extends CustomAdapter{
         Pizza pizza = localDataSet.get(position);
         viewHolder.rowName.setText(pizza.getName().value);
         viewHolder.rowSize.setText(pizza.getSize().toString());
+        viewHolder.rowCrust.setText(pizza.getCrust().toString());
+        viewHolder.rowPrice.setText(Common.formatDecPlace2(pizza.getSubTotal()));
         viewHolder.rowToppings.setVisibility(View.GONE);
         viewHolder.labelToppings.setVisibility(View.INVISIBLE);
     }
